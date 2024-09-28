@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptoholic Crypto Dashboard</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Container for content -->
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo">🔮 Cryptoholic</div>
+            <div class="date" id="date">September 28</div>
+        </div>
+
+        <!-- Market Overview Section -->
+        <div class="section market-overview">
+            <h2>MARKET OVERVIEW</h2>
+            <div class="overview-grid">
+                <div class="box" id="marketCap">
+                    <h3>💰 Crypto Market Cap</h3>
+                    <p>$2.45T</p>
+                </div>
+
+                <div class="box" id="volume24h">
+                    <h3>📊 Market Volume 24H</h3>
+                    <p>$65.20B</p>
+                </div>
+
+                <div class="box" id="btcDominance">
+                    <h3>🔶 BTC Dominance</h3>
+                    <p>53%</p>
+                </div>
+
+                <div class="box" id="ethDominance">
+                    <h3>🟣 ETH Dominance</h3>
+                    <p>13%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sentiment Indicators Section -->
+        <div class="section sentiment-indicators">
+            <h2>SENTIMENT INDICATORS</h2>
+            <div class="overview-grid">
+                <div class="box" id="fearGreedIndex">
+                    <h3>😱 Fear & Greed Index</h3>
+                    <p id="greedScore">64</p>
+                    <p id="greedLevel">Greed</p>
+                </div>
+
+                <div class="box" id="altcoinSeason">
+                    <h3>🌕 Altcoin Season Index</h3>
+                    <p id="seasonScore">0</p>
+                    <p>Bitcoin Season</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Cryptos Section -->
+        <div class="section top-cryptos">
+            <h2>TOP CRYPTOS</h2>
+            <div class="overview-grid">
+                <div class="box" id="btcPrice">
+                    <h3>🔶 Bitcoin</h3>
+                    <p>$65,714 <span class="change">-0.29%</span></p>
+                </div>
+
+                <div class="box" id="ethPrice">
+                    <h3>🟣 Ethereum</h3>
+                    <p>$2,677 <span class="change">-0.92%</span></p>
+                </div>
+
+                <div class="box" id="solPrice">
+                    <h3>🟢 Solana</h3>
+                    <p>$156 <span class="change">-0.98%</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Metrics Section -->
+        <div class="section additional-data">
+            <h2>ADDITIONAL METRICS</h2>
+            <div class="overview-grid">
+                <div class="box" id="liquidations">
+                    <h3>💥 Total Liquidations (24H)</h3>
+                    <p>Long: $0.00</p>
+                    <p>Short: $0.00</p>
+                </div>
+
+                <div class="box" id="tvlDeFi">
+                    <h3>🔒 Total Value Locked in DeFi</h3>
+                    <p>$0.00</p>
+                </div>
+
+                <div class="box" id="networkHashRate">
+                    <h3>⚡ Network Hash Rate</h3>
+                    <p>0 TH/s</p>
+                </div>
+
+                <div class="box" id="transactionVolume">
+                    <h3>📈 Transaction Volume</h3>
+                    <p>$65.60B</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
