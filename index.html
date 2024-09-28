@@ -22,22 +22,22 @@
             <div class="overview-grid">
                 <div class="box" id="marketCap">
                     <h3>💰 Crypto Market Cap</h3>
-                    <p>$2.45T</p>
+                    <p id="marketCapValue"></p>
                 </div>
 
                 <div class="box" id="volume24h">
                     <h3>📊 Market Volume 24H</h3>
-                    <p>$65.20B</p>
+                    <p id="volume24hValue"></p>
                 </div>
 
                 <div class="box" id="btcDominance">
                     <h3>🔶 BTC Dominance</h3>
-                    <p>53%</p>
+                    <p id="btcDominanceValue"></p>
                 </div>
 
                 <div class="box" id="ethDominance">
                     <h3>🟣 ETH Dominance</h3>
-                    <p>13%</p>
+                    <p id="ethDominanceValue"></p>
                 </div>
             </div>
         </div>
@@ -48,35 +48,38 @@
             <div class="overview-grid">
                 <div class="box" id="fearGreedIndex">
                     <h3>😱 Fear & Greed Index</h3>
-                    <p id="greedScore">64</p>
-                    <p id="greedLevel">Greed</p>
+                    <p id="greedScore"></p>
+                    <p id="greedLevel"></p>
                 </div>
 
                 <div class="box" id="altcoinSeason">
                     <h3>🌕 Altcoin Season Index</h3>
-                    <p id="seasonScore">0</p>
-                    <p>Bitcoin Season</p>
+                    <p id="seasonScore"></p>
+                    <p id="seasonSentiment"></p>
                 </div>
             </div>
         </div>
 
-        <!-- Top Cryptos Section -->
+        <!-- Top Cryptos Section with Red/Green Change Indicators -->
         <div class="section top-cryptos">
             <h2>TOP CRYPTOS</h2>
             <div class="overview-grid">
                 <div class="box" id="btcPrice">
                     <h3>🔶 Bitcoin</h3>
-                    <p>$65,714 <span class="change">-0.29%</span></p>
+                    <p id="crypto1PriceValue"></p>
+                    <p><span id="crypto1Change"></span></p>
                 </div>
 
                 <div class="box" id="ethPrice">
                     <h3>🟣 Ethereum</h3>
-                    <p>$2,677 <span class="change">-0.92%</span></p>
+                    <p id="crypto2PriceValue"></p>
+                    <p><span id="crypto2Change"></span></p>
                 </div>
 
                 <div class="box" id="solPrice">
                     <h3>🟢 Solana</h3>
-                    <p>$156 <span class="change">-0.98%</span></p>
+                    <p id="crypto3PriceValue"></p>
+                    <p><span id="crypto3Change"></span></p>
                 </div>
             </div>
         </div>
@@ -87,27 +90,30 @@
             <div class="overview-grid">
                 <div class="box" id="liquidations">
                     <h3>💥 Total Liquidations (24H)</h3>
-                    <p>Long: $0.00</p>
-                    <p>Short: $0.00</p>
+                    <p>Long: <span id="liquidationsLong"></span></p>
+                    <p>Short: <span id="liquidationsShort"></span></p>
                 </div>
 
                 <div class="box" id="tvlDeFi">
                     <h3>🔒 Total Value Locked in DeFi</h3>
-                    <p>$0.00</p>
+                    <p id="totalValueLocked"></p>
                 </div>
 
                 <div class="box" id="networkHashRate">
                     <h3>⚡ Network Hash Rate</h3>
-                    <p>0 TH/s</p>
+                    <p id="networkHash"></p>
                 </div>
 
                 <div class="box" id="transactionVolume">
                     <h3>📈 Transaction Volume</h3>
-                    <p>$65.60B</p>
+                    <p id="transactionVol"></p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
 
 </body>
 </html>
