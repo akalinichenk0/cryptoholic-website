@@ -3,113 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptoholic Crypto Dashboard</title>
-    <!-- Google Fonts Link for Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Cryptoholic</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-
-    <!-- Container for content -->
     <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <div class="logo">🔮 Cryptoholic</div>
-            <div class="date" id="date">September 28</div>
-        </div>
-
-        <!-- Market Overview Section -->
-        <div class="section market-overview">
-            <h2>MARKET OVERVIEW</h2>
+        <header class="header">
+            <div class="logo">
+                🔮 Cryptoholic
+            </div>
+            <div class="date">
+                September 28
+            </div>
+        </header>
+        
+        <!-- Section for Market Overview -->
+        <section class="section">
+            <h2>Market overview</h2>
             <div class="overview-grid">
-                <div class="box" id="marketCap">
-                    <h3>💰 Crypto Market Cap</h3>
+                <div class="box">
+                    <h3>🪙 Crypto Market Cap</h3>
                     <p>$2.45T</p>
                 </div>
-
-                <div class="box" id="volume24h">
+                <div class="box">
                     <h3>📊 Market Volume 24H</h3>
                     <p>$65.20B</p>
                 </div>
-
-                <div class="box" id="btcDominance">
-                    <h3>🔶 BTC Dominance</h3>
-                    <p>53%</p>
+                <div class="box">
+                    <h3>💼 BTC Dominance</h3>
+                    <p>53.79%</p>
                 </div>
-
-                <div class="box" id="ethDominance">
-                    <h3>🟣 ETH Dominance</h3>
-                    <p>13%</p>
+                <div class="box">
+                    <h3>📈 ETH Dominance</h3>
+                    <p>13.34%</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Sentiment Indicators Section -->
-        <div class="section sentiment-indicators">
+        <!-- Section for Sentiment Indicators -->
+        <section class="section">
             <h2>SENTIMENT INDICATORS</h2>
             <div class="overview-grid">
-                <div class="box" id="fearGreedIndex">
+                <div class="box">
                     <h3>😱 Fear & Greed Index</h3>
-                    <p id="greedScore">64</p>
-                    <p id="greedLevel">Greed</p>
+                    <p>64 (Greed)</p>
                 </div>
-
-                <div class="box" id="altcoinSeason">
-                    <h3>🌕 Altcoin Season Index</h3>
-                    <p id="seasonScore">0</p>
-                    <p>Bitcoin Season</p>
+                <div class="box">
+                    <h3>⚖️ Altcoin Season Index</h3>
+                    <p>0 (Bitcoin Season)</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Top Cryptos Section -->
-        <div class="section top-cryptos">
-            <h2>TOP CRYPTOS</h2>
+        <!-- Section for Top Cryptos -->
+        <section class="section">
+            <h2>Top cryptos</h2>
             <div class="overview-grid">
-                <div class="box" id="btcPrice">
+                <div class="box">
                     <h3>🔶 Bitcoin</h3>
                     <p>$65,714 <span class="change">-0.29%</span></p>
                 </div>
-
-                <div class="box" id="ethPrice">
-                    <h3>🟣 Ethereum</h3>
+                <div class="box">
+                    <h3>💜 Ethereum</h3>
                     <p>$2,677 <span class="change">-0.92%</span></p>
                 </div>
-
-                <div class="box" id="solPrice">
+                <div class="box">
                     <h3>🟢 Solana</h3>
-                    <p>$156 <span class="change">-0.98%</span></p>
+                    <p>$156.73 <span class="change">-0.98%</span></p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Additional Metrics Section -->
-        <div class="section additional-data">
+        <!-- Section for Additional Metrics -->
+        <section class="section">
             <h2>ADDITIONAL METRICS</h2>
             <div class="overview-grid">
-                <div class="box" id="liquidations">
+                <div class="box">
                     <h3>💥 Total Liquidations (24H)</h3>
                     <p>Long: $0.00</p>
                     <p>Short: $0.00</p>
                 </div>
-
-                <div class="box" id="tvlDeFi">
+                <div class="box">
                     <h3>🔒 Total Value Locked in DeFi</h3>
                     <p>$0.00</p>
                 </div>
-
-                <div class="box" id="networkHashRate">
+                <div class="box">
                     <h3>⚡ Network Hash Rate</h3>
-                    <p>0 TH/s</p>
+                    <p>0.58 TH/s</p>
                 </div>
-
-                <div class="box" id="transactionVolume">
-                    <h3>📈 Transaction Volume</h3>
-                    <p>$65.60B</p>
+                <div class="box">
+                    <h3>📉 Transaction Volume</h3>
+                    <p>$65.20B</p>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
+    <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
