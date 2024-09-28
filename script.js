@@ -47,27 +47,43 @@ function updateDOM(data) {
     }
 
     // Market overview section
-    document.querySelector(".box:nth-child(1) p").textContent = data.marketCap;
-    document.querySelector(".box:nth-child(2) p").textContent = data.volume24h;
-    document.querySelector(".box:nth-child(3) p").textContent = data.btcDominance;
-    document.querySelector(".box:nth-child(4) p").textContent = data.ethDominance;
+    document.querySelector("#marketCapValue").textContent = data.marketCap;
+    document.querySelector("#volume24hValue").textContent = data.volume24h;
+    document.querySelector("#btcDominanceValue").textContent = data.btcDominance;
+    document.querySelector("#ethDominanceValue").textContent = data.ethDominance;
 
     // Sentiment indicators section
-    document.querySelector(".box:nth-child(5) p").textContent = `${data.fearGreedIndex.value} (${data.fearGreedIndex.sentiment})`;
-    document.querySelector(".box:nth-child(6) p").textContent = `${data.altcoinSeasonIndex.value} (${data.altcoinSeasonIndex.sentiment})`;
+    document.querySelector("#greedScore").textContent = `${data.fearGreedIndex.value}`;
+    document.querySelector("#greedLevel").textContent = `${data.fearGreedIndex.sentiment}`;
+    document.querySelector("#seasonScore").textContent = `${data.altcoinSeasonIndex.value}`;
+    document.querySelector("#seasonSentiment").textContent = `${data.altcoinSeasonIndex.sentiment}`;
 
-    // Top cryptos section
+    // Top cryptos section with red/green indicators for profit/loss
     const topCryptos = data.topCryptos;
-    document.querySelector(".box:nth-child(7) p").textContent = `${topCryptos[0].price} (${topCryptos[0].change})`;
-    document.querySelector(".box:nth-child(8) p").textContent = `${topCryptos[1].price} (${topCryptos[1].change})`;
-    document.querySelector(".box:nth-child(9) p").textContent = `${topCryptos[2].price} (${topCryptos[2].change})`;
+
+    topCryptos.forEach((crypto, index) => {
+        const priceElement = document.querySelector(`#crypto${index + 1}PriceValue`);
+        const changeElement = document.querySelector(`#crypto${index + 1}Change`);
+
+        priceElement.textContent = crypto.price;
+
+        // Check if the change is positive or negative and apply appropriate color
+        const changeValue = parseFloat(crypto.change);
+        if (changeValue >= 0) {
+            changeElement.textContent = `+${crypto.change}`;
+            changeElement.style.color = "green"; // Green for profit
+        } else {
+            changeElement.textContent = `${crypto.change}`;
+            changeElement.style.color = "red"; // Red for loss
+        }
+    });
 
     // Additional metrics section
-    document.querySelector(".box:nth-child(10) p").textContent = `Long: ${data.additionalMetrics.totalLiquidations.long}`;
-    document.querySelector(".box:nth-child(10) p:nth-child(2)").textContent = `Short: ${data.additionalMetrics.totalLiquidations.short}`;
-    document.querySelector(".box:nth-child(11) p").textContent = data.additionalMetrics.totalValueLocked;
-    document.querySelector(".box:nth-child(12) p").textContent = data.additionalMetrics.networkHashRate;
-    document.querySelector(".box:nth-child(13) p").textContent = data.additionalMetrics.transactionVolume;
+    document.querySelector("#liquidationsLong").textContent = data.additionalMetrics.totalLiquidations.long;
+    document.querySelector("#liquidationsShort").textContent = data.additionalMetrics.totalLiquidations.short;
+    document.querySelector("#totalValueLocked").textContent = data.additionalMetrics.totalValueLocked;
+    document.querySelector("#networkHash").textContent = data.additionalMetrics.networkHashRate;
+    document.querySelector("#transactionVol").textContent = data.additionalMetrics.transactionVolume;
 }
 
 // Fetch real data and update the DOM on page load
