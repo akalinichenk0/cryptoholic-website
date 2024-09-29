@@ -9,10 +9,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: url('https://images.pexels.com/photos/1694000/pexels-photo-1694000.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed; /* Dark starry sky background */
-    background-size: cover; /* Ensure background covers entire viewport */
+    background: url('https://images.pexels.com/photos/1694000/pexels-photo-1694000.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed;
+    background-size: cover;
     height: 100vh;
-    overflow: hidden; /* Prevent scrolling */
+    overflow-x: hidden;  /* Disable horizontal scrolling */
+    overflow-y: auto;    /* Allow vertical scrolling */
 }
 
 /* Container styles */
@@ -37,25 +38,25 @@ body {
 }
 
 .logo {
-    font-size: 2.7rem; /* Slightly increase the logo size */
+    font-size: 2.7rem;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Text shadow for logo */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .date {
-    font-size: 1.7rem; /* Slightly larger date */
+    font-size: 1.7rem;
     font-weight: bold;
     color: #ffffff;
 }
 
 /* Section header styles */
 .section h2 {
-    font-size: 1.7rem; /* Slightly larger section headers */
+    font-size: 1.7rem;
     color: #ffffff;
     margin-bottom: 10px;
-    text-align: left; /* Align headers to the left */
-    padding-left: 10px; /* Slightly indented from the left side */
+    text-align: left;
+    padding-left: 10px;
     margin-top: 30px;
     opacity: 0.92;
 }
@@ -71,42 +72,62 @@ body {
 
 /* Volumetric block design with HSL color */
 .box {
-    background-color: hsl(232deg 5% 16%); /* Dark blue-gray HSL color */
+    background-color: hsl(232deg 5% 16%);
     border-radius: 15px;
-    padding: 18px; /* Increased padding inside boxes */
+    padding: 18px;
     color: white;
     text-align: center;
 
-    /* Enhanced 3D shadow effect for volumetric look */
     box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.8), -14px -14px 40px rgba(255, 255, 255, 0.1);
-
-    /* Transition effect for hover */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .box h3 {
-    font-size: 1.4rem; /* Slightly increase size for box headings */
+    font-size: 1.4rem;
     margin-bottom: 8px;
 }
 
 .box p {
-    font-size: 1.4rem; /* Slightly increase size for box content */
+    font-size: 1.4rem;
 }
 
 .box .change {
-    font-size: 1.2rem; /* Slightly increase size for price change */
-    color: #ff7675; /* Red for negative changes */
+    font-size: 1.2rem;
+    color: #ff7675;
 }
 
 /* Subtle hover effect */
 .box:hover {
     transform: translateY(-5px);
-    box-shadow: 16px 16px 50px rgba(0, 0, 0, 0.85), -16px -16px 50px rgba(255, 255, 255, 0.2); /* Stronger shadow for hover */
+    box-shadow: 16px 16px 50px rgba(0, 0, 0, 0.85), -16px -16px 50px rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for mobile */
 @media (max-width: 768px) {
     .overview-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .box {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .date {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
     }
 }
