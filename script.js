@@ -39,6 +39,16 @@ async function fetchRealData() {
     }
 }
 
+// Function to update the date dynamically
+function updateDate() {
+    const dateElement = document.getElementById("date");
+    const today = new Date();
+    const options = { month: 'long', day: 'numeric' };
+    const formattedDate = today.toLocaleDateString('en-US', options);
+    
+    dateElement.textContent = formattedDate;
+}
+
 // Function to update the DOM with fetched data
 function updateDOM(data) {
     if (!data) {
@@ -88,6 +98,7 @@ function updateDOM(data) {
 
 // Fetch real data and update the DOM on page load
 document.addEventListener('DOMContentLoaded', async function () {
+    updateDate(); // Update the date dynamically
     const realData = await fetchRealData(); // Fetch real data from the API
     updateDOM(realData);                    // Update the DOM with the data
 });
