@@ -9,16 +9,16 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: url('https://images.pexels.com/photos/1694000/pexels-photo-1694000.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed;
+    background: url('https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg') no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-/* Smaller, optimized image for mobile */
+/* Responsive adjustments for mobile */
 @media (max-width: 768px) {
     body {
-        background: url('https://images.pexels.com/photos/1694000/pexels-photo-1694000.jpeg?auto=compress&cs=tinysrgb&w=800') no-repeat center center scroll;
+        background: url('https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg') no-repeat center center scroll;
         background-size: cover;
     }
 }
