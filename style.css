@@ -94,9 +94,8 @@ body {
     opacity: 0.95;
 }
 
-/* Volumetric block design */
 .box {
-    background-color: hsl(232deg 5% 16%);
+    background-color: #0a0909; 
     border-radius: 15px;
     padding: 18px;
     color: white;
