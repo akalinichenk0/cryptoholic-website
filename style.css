@@ -77,6 +77,15 @@ body {
     opacity: 0.95;
 }
 
+/* Price grid for live crypto prices */
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+    opacity: 0.95;
+}
+
 /* Volumetric block design */
 .box {
     background-color: hsl(232deg 5% 16%);
