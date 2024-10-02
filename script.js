@@ -5,37 +5,21 @@ async function fetchRealData() {
         const data = await response.json();
         
         // Map the API response to your data structure
-        return {
+        const cryptoData = {
             marketCap: `$${(data.data.total_market_cap.usd / 1e12).toFixed(2)}T`,
             volume24h: `$${(data.data.total_volume.usd / 1e9).toFixed(2)}B`,
             btcDominance: `${data.data.market_cap_percentage.btc.toFixed(2)}%`,
-            ethDominance: `${data.data.market_cap_percentage.eth.toFixed(2)}%`,
-            fearGreedIndex: {
-                value: 64, // Static for now (replace with a real API later if available)
-                sentiment: "Greed"
-            },
-            altcoinSeasonIndex: {
-                value: 0, // Static for now (replace with a real API later if available)
-                sentiment: "Bitcoin Season"
-            },
-            topCryptos: [
-                { name: "Bitcoin", price: "$65,714", change: "-0.29%" }, // Static
-                { name: "Ethereum", price: "$2,677", change: "-0.92%" }, // Static
-                { name: "Solana", price: "$156.73", change: "-0.98%" }   // Static
-            ],
-            additionalMetrics: {
-                totalLiquidations: {
-                    long: "$0.00", // Placeholder for future API
-                    short: "$0.00" // Placeholder for future API
-                },
-                totalValueLocked: "$0.00", // Placeholder for future API
-                networkHashRate: "0.58 TH/s", // Static
-                transactionVolume: `$${(data.data.total_volume.usd / 1e9).toFixed(2)}B`
-            }
+            ethDominance: `${data.data.market_cap_percentage.eth.toFixed(2)}%`
         };
+
+        // Update the HTML elements with the fetched data
+        document.getElementById('marketCapValue').textContent = cryptoData.marketCap;
+        document.getElementById('volume24hValue').textContent = cryptoData.volume24h;
+        document.getElementById('btcDominanceValue').textContent = cryptoData.btcDominance;
+        document.getElementById('ethDominanceValue').textContent = cryptoData.ethDominance;
+
     } catch (error) {
         console.error('Error fetching data from API:', error);
-        return null;
     }
 }
 
@@ -49,56 +33,50 @@ function updateDate() {
     dateElement.textContent = formattedDate;
 }
 
-// Function to update the DOM with fetched data
-function updateDOM(data) {
-    if (!data) {
-        console.error('No data available to update the DOM');
-        return;
-    }
+// Call the functions after the page loads
+window.onload = function() {
+    updateDate();  // Update the date when the page loads
+    fetchRealData();  // Fetch crypto data when the page loads
 
-    // Market overview section
-    document.querySelector("#marketCapValue").textContent = data.marketCap;
-    document.querySelector("#volume24hValue").textContent = data.volume24h;
-    document.querySelector("#btcDominanceValue").textContent = data.btcDominance;
-    document.querySelector("#ethDominanceValue").textContent = data.ethDominance;
+    // Optionally, fetch data every 60 seconds (live updates)
+    setInterval(fetchRealData, 60000);
+};
 
-    // Sentiment indicators section
-    document.querySelector("#greedScore").textContent = `${data.fearGreedIndex.value}`;
-    document.querySelector("#greedLevel").textContent = `${data.fearGreedIndex.sentiment}`;
-    document.querySelector("#seasonScore").textContent = `${data.altcoinSeasonIndex.value}`;
-    document.querySelector("#seasonSentiment").textContent = `${data.altcoinSeasonIndex.sentiment}`;
+// Function to fetch real-time data for crypto prices
+async function fetchCryptoPrices() {
+    try {
+        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd');
+        const data = await response.json();
 
-    // Top cryptos section with red/green indicators for profit/loss
-    const topCryptos = data.topCryptos;
-
-    topCryptos.forEach((crypto, index) => {
-        const priceElement = document.querySelector(`#crypto${index + 1}PriceValue`);
-        const changeElement = document.querySelector(`#crypto${index + 1}Change`);
-
-        priceElement.textContent = crypto.price;
-
-        // Check if the change is positive or negative and apply appropriate color
-        const changeValue = parseFloat(crypto.change);
-        if (changeValue >= 0) {
-            changeElement.textContent = `+${crypto.change}`;
-            changeElement.style.color = "green"; // Green for profit
-        } else {
-            changeElement.textContent = `${crypto.change}`;
-            changeElement.style.color = "red"; // Red for loss
+        // Helper function to format the number conditionally
+        function formatPrice(value) {
+            // Check if the value is a whole number
+            return value % 1 === 0 
+                ? value.toLocaleString('en-US', { minimumFractionDigits: 0 }) 
+                : value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
-    });
 
-    // Additional metrics section
-    document.querySelector("#liquidationsLong").textContent = data.additionalMetrics.totalLiquidations.long;
-    document.querySelector("#liquidationsShort").textContent = data.additionalMetrics.totalLiquidations.short;
-    document.querySelector("#totalValueLocked").textContent = data.additionalMetrics.totalValueLocked;
-    document.querySelector("#networkHash").textContent = data.additionalMetrics.networkHashRate;
-    document.querySelector("#transactionVol").textContent = data.additionalMetrics.transactionVolume;
+        // Format the prices with commas and conditional decimals
+        const btcPrice = formatPrice(data.bitcoin.usd);
+        const ethPrice = formatPrice(data.ethereum.usd);
+        const solPrice = formatPrice(data.solana.usd);
+
+        // Update the HTML elements with the formatted prices
+        document.getElementById('btcPriceValue').textContent = `$${btcPrice}`;
+        document.getElementById('ethPriceValue').textContent = `$${ethPrice}`;
+        document.getElementById('solPriceValue').textContent = `$${solPrice}`;
+
+    } catch (error) {
+        console.error('Error fetching crypto prices:', error);
+    }
 }
 
-// Fetch real data and update the DOM on page load
-document.addEventListener('DOMContentLoaded', async function () {
-    updateDate(); // Update the date dynamically
-    const realData = await fetchRealData(); // Fetch real data from the API
-    updateDOM(realData);                    // Update the DOM with the data
-});
+// Call the functions after the page loads
+window.onload = function() {
+    updateDate();  // Update the date when the page loads
+    fetchRealData();  // Fetch market overview data
+    fetchCryptoPrices();  // Fetch live prices for Bitcoin, Ethereum, and Solana
+
+    // Optionally, fetch data every 60 seconds for live updates
+    setInterval(fetchCryptoPrices, 60000);
+};
