@@ -12,7 +12,7 @@
     <div class="container">
         <!-- Header Section -->
         <div class="header">
-            <div class="logo"> Cryptoholic</div>
+            <div class="logo">Cryptoholic</div>
             <div class="date" id="date"></div> <!-- Dynamically updated date -->
         </div>
 
@@ -40,79 +40,32 @@
                     <p id="ethDominanceValue"></p>
                 </div>
             </div>
+        </div> <!-- Close the section -->
+
+        <!-- Cryptocurrency Prices Section -->
+<div class="section crypto-prices">
+    <h2>LIVE CRYPTO PRICES</h2>
+    <div class="price-grid">
+        <div class="box" id="bitcoinPrice">
+            <h3>🟠 Bitcoin (BTC)</h3>
+            <p id="btcPriceValue"></p>
         </div>
 
-        <!-- Sentiment Indicators Section -->
-        <div class="section sentiment-indicators">
-            <h2>SENTIMENT INDICATORS</h2>
-            <div class="overview-grid">
-                <div class="box" id="fearGreedIndex">
-                    <h3>⚖️ Fear & Greed Index</h3>
-                    <p id="greedScore"></p>
-                    <p id="greedLevel"></p>
-                </div>
-
-                <div class="box" id="altcoinSeason">
-                    <h3>🎢 Altcoin Season Index</h3>
-                    <p id="seasonScore"></p>
-                    <p id="seasonSentiment"></p>
-                </div>
-            </div>
+        <div class="box" id="ethereumPrice">
+            <h3>🟣 Ethereum (ETH)</h3>
+            <p id="ethPriceValue"></p>
         </div>
 
-        <!-- Top Cryptos Section with Red/Green Change Indicators -->
-        <div class="section top-cryptos">
-            <h2>TOP CRYPTOS</h2>
-            <div class="overview-grid">
-                <div class="box" id="btcPrice">
-                    <h3>🟠 Bitcoin</h3>
-                    <p id="crypto1PriceValue"></p>
-                    <p><span id="crypto1Change"></span></p>
-                </div>
-
-                <div class="box" id="ethPrice">
-                    <h3>🟣 Ethereum</h3>
-                    <p id="crypto2PriceValue"></p>
-                    <p><span id="crypto2Change"></span></p>
-                </div>
-
-                <div class="box" id="solPrice">
-                    <h3>🟢 Solana</h3>
-                    <p id="crypto3PriceValue"></p>
-                    <p><span id="crypto3Change"></span></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Additional Metrics Section -->
-        <div class="section additional-data">
-            <h2>ADDITIONAL METRICS</h2>
-            <div class="overview-grid">
-                <div class="box" id="liquidations">
-                    <h3>💥 Total Liquidations (24H)</h3>
-                    <p>Long: <span id="liquidationsLong"></span></p>
-                    <p>Short: <span id="liquidationsShort"></span></p>
-                </div>
-
-                <div class="box" id="tvlDeFi">
-                    <h3>🔒 Total Value Locked in DeFi</h3>
-                    <p id="totalValueLocked"></p>
-                </div>
-
-                <div class="box" id="networkHashRate">
-                    <h3>⚡ Network Hash Rate</h3>
-                    <p id="networkHash"></p>
-                </div>
-
-                <div class="box" id="transactionVolume">
-                    <h3>📈 Transaction Volume</h3>
-                    <p id="transactionVol"></p>
-                </div>
-            </div>
+        <div class="box" id="solanaPrice">
+            <h3>🔵 Solana (SOL)</h3>
+            <p id="solPriceValue"></p>
         </div>
     </div>
+</div>
 
-    <!-- Link to JavaScript file -->
+    </div> <!-- Close the container -->
+
+    <!-- You may need to include a JavaScript file to populate these values dynamically -->
     <script src="script.js"></script>
 
 </body>
