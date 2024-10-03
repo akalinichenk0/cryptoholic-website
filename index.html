@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptoholic Crypto Dashboard</title>
+
+    <!-- Link to Quantico font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet">
+
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +18,10 @@
         <!-- Header Section -->
         <div class="header">
             <div class="logo">Cryptoholic</div>
-            <div class="date" id="date"></div> <!-- Dynamically updated date -->
+            <div class="date-container">
+                <div class="date" id="date"></div> <!-- Dynamically updated date -->
+                <div class="gmt-time" id="gmtTime"></div> <!-- Dynamically updated GMT time -->
+            </div>
         </div>
 
         <!-- Market Overview Section -->
@@ -31,41 +39,44 @@
                 </div>
 
                 <div class="box" id="btcDominance">
-                    <h3> <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" alt="Bitcoin Logo" class="crypto-logo"> BTC Dominance</h3>
+                    <h3><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" alt="Bitcoin Logo" class="crypto-logo"> BTC Dominance</h3>
                     <p id="btcDominanceValue"></p>
                 </div>
 
                 <div class="box" id="ethDominance">
-                    <h3> <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" alt="Ethereum Logo" class="crypto-logo"> ETH Dominance</h3>
+                    <h3><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" alt="Ethereum Logo" class="crypto-logo"> ETH Dominance</h3>
                     <p id="ethDominanceValue"></p>
                 </div>
             </div>
-        </div> <!-- Close the section -->
+        </div>
 
         <!-- Cryptocurrency Prices Section -->
-<div class="section crypto-prices">
-    <h2>LIVE CRYPTO PRICES</h2>
-    <div class="price-grid">
-        <div class="box" id="bitcoinPrice">
-            <h3><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" alt="Bitcoin Logo" class="crypto-logo"> Bitcoin (BTC)</h3>
-            <p id="btcPriceValue"></p>
-        </div>
+        <div class="section crypto-prices">
+            <h2>LIVE CRYPTO PRICES</h2>
+            <div class="price-grid">
+                <div class="box" id="bitcoinPrice">
+                    <h3><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" alt="Bitcoin Logo" class="crypto-logo"> Bitcoin (BTC)</h3>
+                    <p id="btcPriceValue"></p>
+                    <p id="btcPriceChange" class="price-change"></p> <!-- Price change element -->
+                </div>
 
-        <div class="box" id="ethereumPrice">
-            <h3><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" alt="Ethereum Logo" class="crypto-logo"> Ethereum (ETH)</h3>
-            <p id="ethPriceValue"></p>
-        </div>
+                <div class="box" id="ethereumPrice">
+                    <h3><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" alt="Ethereum Logo" class="crypto-logo"> Ethereum (ETH)</h3>
+                    <p id="ethPriceValue"></p>
+                    <p id="ethPriceChange" class="price-change"></p> <!-- Price change element -->
+                </div>
 
-        <div class="box" id="solanaPrice">
-            <h3><img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=035" alt="Solana Logo" class="crypto-logo"> Solana (SOL)</h3>
-            <p id="solPriceValue"></p>
+                <div class="box" id="solanaPrice">
+                    <h3><img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=035" alt="Solana Logo" class="crypto-logo"> Solana (SOL)</h3>
+                    <p id="solPriceValue"></p>
+                    <p id="solPriceChange" class="price-change"></p> <!-- Price change element -->
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
     </div> <!-- Close the container -->
 
-    <!-- You may need to include a JavaScript file to populate these values dynamically -->
+    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 
 </body>
