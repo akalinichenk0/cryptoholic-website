@@ -1,14 +1,17 @@
+/* Import the Quantico font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
 /* Global styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quantico', sans-serif; /* Apply Quantico font to the whole site */
     font-size: 90%;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quantico', sans-serif; /* Apply Quantico font to body */
     background: url('https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg') no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
@@ -21,6 +24,27 @@ body {
         background: url('https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg') no-repeat center center scroll;
         background-size: cover;
     }
+}
+
+/* Date and GMT Time Container */
+.date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align the content to the right */
+    font-size: 1.7rem;
+}
+
+.date {
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.gmt-time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: right;
 }
 
 /* Crypto logo styles */
@@ -92,6 +116,21 @@ body {
     gap: 10px;
     margin-top: 10px;
     opacity: 0.95;
+}
+
+/* Style for the price change indicator */
+.price-change {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #00ff00; /* LCD-like green color */
+}
+
+/* Optional styling for the (1D) time frame */
+.price-change span {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: gray;
 }
 
 .box {
