@@ -24,56 +24,68 @@
             </div>
         </div>
 
-        <!-- Market Overview Section -->
-        <div class="section market-overview">
-            <h2>MARKET OVERVIEW</h2>
-            <div class="overview-grid">
-                <div class="box" id="marketCap">
-                    <h3>🪙 Crypto Market Cap</h3>
-                    <p id="marketCapValue"></p>
-                </div>
+        <!-- Main content section -->
+        <div class="main-content">
+            <!-- Live Cryptocurrency Prices Section -->
+            <div class="crypto-prices-box">
+                <h2>LIVE CRYPTO PRICES</h2>
+                <div class="crypto-list">
+                    <div class="crypto-item">
+                        <h3><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" alt="Bitcoin Logo" class="crypto-logo"> Bitcoin (BTC)</h3>
+                        <p id="btcPriceValue"></p>
+                        <p id="btcPriceChange" class="price-change"></p> <!-- Price change element -->
+                    </div>
 
-                <div class="box" id="volume24h">
-                    <h3>📊 Market Volume 24H</h3>
-                    <p id="volume24hValue"></p>
-                </div>
+                    <div class="crypto-item">
+                        <h3><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" alt="Ethereum Logo" class="crypto-logo"> Ethereum (ETH)</h3>
+                        <p id="ethPriceValue"></p>
+                        <p id="ethPriceChange" class="price-change"></p> <!-- Price change element -->
+                    </div>
 
-                <div class="box" id="btcDominance">
-                    <h3><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" alt="Bitcoin Logo" class="crypto-logo"> BTC Dominance</h3>
-                    <p id="btcDominanceValue"></p>
-                </div>
-
-                <div class="box" id="ethDominance">
-                    <h3><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" alt="Ethereum Logo" class="crypto-logo"> ETH Dominance</h3>
-                    <p id="ethDominanceValue"></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Cryptocurrency Prices Section -->
-        <div class="section crypto-prices">
-            <h2>LIVE CRYPTO PRICES</h2>
-            <div class="price-grid">
-                <div class="box" id="bitcoinPrice">
-                    <h3><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" alt="Bitcoin Logo" class="crypto-logo"> Bitcoin (BTC)</h3>
-                    <p id="btcPriceValue"></p>
-                    <p id="btcPriceChange" class="price-change"></p> <!-- Price change element -->
-                </div>
-
-                <div class="box" id="ethereumPrice">
-                    <h3><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" alt="Ethereum Logo" class="crypto-logo"> Ethereum (ETH)</h3>
-                    <p id="ethPriceValue"></p>
-                    <p id="ethPriceChange" class="price-change"></p> <!-- Price change element -->
-                </div>
-
-                <div class="box" id="solanaPrice">
-                    <h3><img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=035" alt="Solana Logo" class="crypto-logo"> Solana (SOL)</h3>
-                    <p id="solPriceValue"></p>
-                    <p id="solPriceChange" class="price-change"></p> <!-- Price change element -->
+                    <div class="crypto-item">
+                        <h3><img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=035" alt="Solana Logo" class="crypto-logo"> Solana (SOL)</h3>
+                        <p id="solPriceValue"></p>
+                        <p id="solPriceChange" class="price-change"></p> <!-- Price change element -->
+                    </div>
                 </div>
             </div>
-        </div>
 
+            <!-- Market Overview Section -->
+            <div class="market-overview">
+                <h2>MARKET OVERVIEW</h2>
+                <div class="overview-grid">
+                    <div class="box" id="marketCap">
+                        <h3>🪙 Crypto Market Cap</h3>
+                        <p id="marketCapValue"></p>
+                    </div>
+
+                    <div class="box" id="volume24h">
+                        <h3>📊 Market Volume 24H</h3>
+                        <p id="volume24hValue"></p>
+                    </div>
+
+                    <div class="box" id="btcDominance">
+                        <h3><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" alt="Bitcoin Logo" class="crypto-logo"> BTC Dominance</h3>
+                        <p id="btcDominanceValue"></p>
+                    </div>
+
+                    <div class="box" id="ethDominance">
+                        <h3><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" alt="Ethereum Logo" class="crypto-logo"> ETH Dominance</h3>
+                        <p id="ethDominanceValue"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fear & Greed Index Section -->
+            <div class="fear-greed">
+                <h2>FEAR & GREED INDEX</h2>
+                <div class="gauge">
+                    <div class="gauge-pointer" id="gauge-pointer"></div>
+                </div>
+                <div class="index-number" id="fearGreedValue">Loading...</div>
+                <div class="index-status" id="fearGreedStatus">Fetching...</div>
+            </div>
+        </div>
     </div> <!-- Close the container -->
 
     <!-- Link to external JavaScript file -->
