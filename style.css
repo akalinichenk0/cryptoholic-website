@@ -39,7 +39,7 @@ body {
 
 /* Cryptoholic logo */
 .logo {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
@@ -182,12 +182,13 @@ body {
         margin-bottom: 20px;
     }
 
-    /* Adjust logo font size */
+    /* Adjust Cryptoholic logo for mobile */
     .logo {
-        font-size: 3rem;
+        font-size: 2rem; /* Adjust the font size for mobile */
+        text-align: center; /* Center align the logo on smaller screens */
     }
 
-    /* Adjust font sizes for better readability on small screens */
+    /* Adjust font sizes for date and time */
     .date, .gmt-time {
         font-size: 1.2rem;
     }
@@ -216,17 +217,14 @@ body {
     }
 }
 
-/* Responsive for very small devices (portrait phones) */
+/* Further adjustments for very small devices (portrait phones) */
 @media (max-width: 480px) {
-    .main-content {
-        padding: 10px;
-    }
-
+    /* Further reduce Cryptoholic logo size for very small screens */
     .logo {
-        font-size: 1.5rem;
+        font-size: 2.0rem; /* Smaller font for very small screens */
     }
 
-    /* Further reduce font sizes */
+    /* Further adjust text sizes */
     .crypto-prices-box h3, .market-overview h3, .crypto-prices-box p, .market-overview p {
         font-size: 1rem;
     }
