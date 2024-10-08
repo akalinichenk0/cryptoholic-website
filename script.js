@@ -67,6 +67,34 @@ async function fetchCryptoPrices() {
     }
 }
 
+// Function to fetch Fear & Greed Index
+async function fetchFearGreedIndex() {
+    try {
+        const response = await fetch('https://api.alternative.me/fng/');
+        const data = await response.json();
+
+        // Check if data exists and update the UI
+        if (data && data.data && data.data.length > 0) {
+            const fearGreedValue = data.data[0].value;  // Get the latest value
+            const fearGreedStatus = data.data[0].value_classification;  // Get the status
+
+            // Update the HTML elements
+            document.getElementById('fearGreedValue').textContent = fearGreedValue;
+            document.getElementById('fearGreedStatus').textContent = fearGreedStatus;
+
+            // Rotate the pointer based on the value (0 to 100)
+            const pointerRotation = (fearGreedValue / 100) * 180 - 90; // Converts value to angle
+            document.getElementById('gauge-pointer').style.transform = `rotate(${pointerRotation}deg)`;
+        } else {
+            throw new Error('Invalid data from API');
+        }
+    } catch (error) {
+        console.error('Error fetching Fear & Greed Index:', error);
+        document.getElementById('fearGreedValue').textContent = 'Error';
+        document.getElementById('fearGreedStatus').textContent = 'Unavailable';
+    }
+}
+
 // Function to update the date dynamically
 function updateDate() {
     const dateElement = document.getElementById("date");
@@ -98,12 +126,12 @@ window.onload = function() {
     updateDate();  // Update the date when the page loads
     fetchGlobalData();  // Fetch market overview data
     fetchCryptoPrices();  // Fetch live prices for Bitcoin, Ethereum, and Solana
+    fetchFearGreedIndex();  // Fetch Fear & Greed Index data
     displayGMTTime();  // Display current GMT time
 
     // Optionally, refresh prices and time every 60 seconds
     setInterval(fetchGlobalData, 60000);
     setInterval(fetchCryptoPrices, 60000);
+    setInterval(fetchFearGreedIndex, 60000);
     setInterval(displayGMTTime, 60000);  // Refresh GMT time every 60 seconds
-
-    
 };
