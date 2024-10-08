@@ -169,14 +169,73 @@ body {
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
+    /* Stack the sections vertically */
     .main-content {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
+    /* Reduce width of the boxes to 100% of the container */
     .crypto-prices-box, .market-overview, .fear-greed {
-        width: 90%; /* Full width on mobile */
+        width: 100%; /* Full width on mobile */
         margin-bottom: 20px;
+    }
+
+    /* Adjust logo font size */
+    .logo {
+        font-size: 2rem;
+    }
+
+    /* Adjust font sizes for better readability on small screens */
+    .date, .gmt-time {
+        font-size: 1.2rem;
+    }
+
+    /* Reduce the font size of crypto prices and overview items */
+    .crypto-prices-box h3, .market-overview h3, .crypto-prices-box p, .market-overview p {
+        font-size: 1.2rem;
+    }
+
+    /* Adjust the gauge for Fear & Greed index */
+    .gauge {
+        width: 60px;
+        height: 30px;
+    }
+
+    .gauge-pointer {
+        height: 40px;
+    }
+
+    .index-number {
+        font-size: 2rem;
+    }
+
+    .index-status {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive for very small devices (portrait phones) */
+@media (max-width: 480px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    /* Further reduce font sizes */
+    .crypto-prices-box h3, .market-overview h3, .crypto-prices-box p, .market-overview p {
+        font-size: 1rem;
+    }
+
+    .index-number {
+        font-size: 1.8rem;
+    }
+
+    .index-status {
+        font-size: 1rem;
     }
 }
